@@ -8,7 +8,7 @@ POST http://localhost:3000/bank-accounts
 Content-Type: application/json
 
 {
-    "account_number": "2222-22"
+    "account_number": "4444"
 }
 
 ###
@@ -27,7 +27,7 @@ POST http://localhost:3000/bank-accounts/transfer
 Content-Type: application/json
 
 {
-    "from": "1111-11",
-    "to": "2222-22",
+    "from": "5555",
+    "to": "4444",
     "amount": 100
 }

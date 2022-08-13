@@ -1,17 +1,17 @@
 import { Inject, Injectable, Scope } from '@nestjs/common';
 import { CreateBankAccountDto } from './dto/create-bank-account.dto';
 import { Repository, DataSource } from 'typeorm';
-import { BankAccount } from './entities/bank-account.entity';
+import { BankAccountSchema } from '../@core/infra/db/bank-account.schema';
 import { InjectRepository, getDataSourceToken } from '@nestjs/typeorm';
 // Real Eval Print Loop
 @Injectable({
-  scope: Scope.REQUEST,
-  durable: true,
+  // scope: Scope.REQUEST,
+  // durable: true,
 })
 export class BankAccountsService {
   constructor(
-    @InjectRepository(BankAccount)
-    private repo: Repository<BankAccount>,
+    @InjectRepository(BankAccountSchema)
+    private repo: Repository<BankAccountSchema>,
     @Inject(getDataSourceToken())
     private dataSource: DataSource,
   ) {}
@@ -66,4 +66,4 @@ export class BankAccountsService {
 
 // conta azul - tenant - empresa
 
-//SaaS 
+//SaaS
